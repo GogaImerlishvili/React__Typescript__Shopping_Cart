@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "React",
+        "price": 10.99,
+        "imgUrl": "./images/41IiBTZOGCL.jpg"
+    },
+    {
+        "id": 2,
+        "name": "JavaScript",
+        "price": 12.99,
+        "imgUrl": "./images/1_zBRkcBbsjWzcPjtcxqhb3Q.jpeg"
+    },
+      {
+        "id": 3,
+        "name": "NodeJs",
+        "price": 15.98,
+        "imgUrl":"./images/49504683._UY630_SR1200,630_.jpg"
+      },
+      {
+        "id":4,
+        "name": "TypeScript",
+        "price": 13.50,
+        "imgUrl":"./images/download.jpeg"
+      }
+]
