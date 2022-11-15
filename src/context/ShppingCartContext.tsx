@@ -1,4 +1,5 @@
 import {createContext,ReactNode,useContext,useState} from "react";
+import ShoppingCart from "../components/ShoppingCart";
 
 type ShoppingCartProviderProps = {
     children: ReactNode
@@ -10,10 +11,14 @@ type CartItem = {
 }
 
 type ShoppingCartContext = {
-    getItemQuantity: (id: number) => number;
-    increaseCartQuantity: (id: number) => void;
-    decreaseCartQuantity: (id: number) => void;
-    removeFromCart: (id:number) => void;
+    openCart: () => void
+    closeCart: () => void
+    getItemQuantity: (id: number) => number
+    increaseCartQuantity: (id: number) => void
+    decreaseCartQuantity: (id: number) => void
+    removeFromCart: (id:number) => void
+    cartQuantity: number
+    cartItems: CartItem[]
 }
 
 const ShoppingCartContext = createContext({} as 
@@ -24,7 +29,14 @@ export function useShoppingCart() {
 }
 
 export function ShoppingCartProvider({children}: ShoppingCartProviderProps){
+    const [isOpen,setIsOpen] = useState(false)
     const [cartItems,setCartItems] = useState<CartItem[]>([])
+
+    const cartQuantity = cartItems.reduce((quantity,item) =>item.quantity + quantity,0)
+    console.log(cartItems.reduce((quantity,item) =>item.quantity + quantity,0))
+
+    const openCart = () => setIsOpen(true)
+    const closeCart = () => setIsOpen(false)
 
  function getItemQuantity(id: number){
     return cartItems.find(item => item.id === id)?.quantity || 0
@@ -67,7 +79,12 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps){
             return currItems.filter(item => item.id !== id)
         })
     }
+
+
     return (
-        <ShoppingCartContext.Provider value={{getItemQuantity,increaseCartQuantity,decreaseCartQuantity,removeFromCart}}>{children}</ShoppingCartContext.Provider>
+        <ShoppingCartContext.Provider value={{getItemQuantity,increaseCartQuantity,
+            decreaseCartQuantity,removeFromCart,cartItems,cartQuantity,openCart,closeCart}}>{children}
+            <ShoppingCart isOpen={isOpen} />
+            </ShoppingCartContext.Provider>
     )
 }
