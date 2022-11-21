@@ -72,7 +72,7 @@ const Home = () => {
       alignItems: "center",
     }}
     >
-      <div style={{fontSize: "2rem",textAlign: "center"}}>
+      <div className="title1" style={{fontSize: "2rem",textAlign: "center",marginLeft: "15%",marginTop: "15px",color:"blue"}}>
         {isWinner && "Winner! - Press Enter to try again"}
         {isLoser && "Nice Try - Press Enter to try again"}
       </div>
