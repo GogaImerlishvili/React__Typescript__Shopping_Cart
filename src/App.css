@@ -30,11 +30,24 @@
 }
 
 
+
+@media only screen and (max-width: 1340px){
+   .single-word{
+    font-size: 3.5rem;
+   }
+   .dashed{
+    margin-left: 10%;
+   }
+}
+
 @media only screen and (max-width: 1200px){
     .keyboard{
         width: 70%;
         margin-left: 25%;
         margin-top: -20%;
+    }
+    .dashed{
+        margin-left: -2%;
     }
 }
 
@@ -53,10 +66,32 @@
         margin-top: 50%;
         margin-left: -40%;
     }
+    .main{
+        margin-left: 25px;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .dashed{
+        margin-left: 5%;
+    }
 }
 
 @media only screen and (max-width: 554px){
     .keyboard{
         width: 75%;
+       
+       
+    }
+
+    .title1{
+        margin-left: 15px;
+        font-size: 15px;
+    }
+    .dashed{
+        margin-left: 15px;
+    }
+    .single-word{
+        font-size: 1.5rem;
     }
 }
