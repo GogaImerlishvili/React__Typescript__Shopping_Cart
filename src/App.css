@@ -18,9 +18,11 @@
     color: white;
 }
 
+
 .button.inactive{
     opacity: .3;
 }
+
 
 .button:hover,
 .button:focus{
