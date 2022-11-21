@@ -1,0 +1,60 @@
+
+
+.button{
+   width: 100%;
+   border: 3px solid black;
+   background: none;
+   /* aspect-ratio: 1 / 1; */
+   font-size: 1.5rem;
+   text-transform: uppercase;
+   /* padding: .5rem; */
+   font-weight: bold;
+   cursor: pointer;
+   color: black;
+}
+
+.button.active{
+    background-color: hsl(200, 100%, 50%);
+    color: white;
+}
+
+.button.inactive{
+    opacity: .3;
+}
+
+.button:hover,
+.button:focus{
+    background-color: hsl(200, 100%, 75%);
+}
+
+
+@media only screen and (max-width: 1200px){
+    .keyboard{
+        width: 70%;
+        margin-left: 25%;
+        margin-top: -20%;
+    }
+}
+
+@media only screen and (max-width: 994px){
+    .keyboard{
+        width: 50%;
+        margin-left: 40%;
+        margin-top: -30%;
+    }
+}
+
+@media only screen and (max-width: 820px){
+    .keyboard{
+        width: 80%;
+        /* background-color: red; */
+        margin-top: 50%;
+        margin-left: -40%;
+    }
+}
+
+@media only screen and (max-width: 554px){
+    .keyboard{
+        width: 75%;
+    }
+}
