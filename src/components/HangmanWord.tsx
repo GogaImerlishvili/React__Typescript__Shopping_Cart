@@ -19,8 +19,8 @@ const HangmanWord = ({guesssedLetters,wordToGuess,reveal=false}:HangmanWordProps
         marginTop: "-15px"
     }}>
       {wordToGuess.split("").map((letter,index) => (
-        <span style={{borderBottom: ".1em solid black"}} key={index}>
-            <span style={{
+        <span className="dashed" style={{borderBottom: ".1em solid black"}} key={index}>
+            <span className="single-word" style={{
                 visibility: guesssedLetters.includes(letter) || reveal ? "visible" : "hidden",
                 color: !guesssedLetters.includes(letter) && reveal ? "red" : "black",
             }}>{letter}</span>
