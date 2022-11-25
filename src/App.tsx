@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Store from './pages/Store';
 import About from './pages/About';
 import Navbar from './components/Navbar';
+import Notes from './pages/Notes';
 import { ShoppingCartProvider } from './context/ShppingCartContext';
 import "./App.css"
 
@@ -18,6 +19,7 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/store' element={<Store />} />
       <Route path='/about' element={<About />} />
+      <Route path="/notes" element={<Notes />} />
     </Routes>
     </Container>
     </ShoppingCartProvider>
