@@ -1,10 +1,17 @@
-import React from 'react'
+import "bootstrap/dist/css/bootstrap.min.css"
+import { NoteData } from "../App"
+import NoteForm from "../components/NoteForm"
 
-const Notes = () => {
+type NewNoteProps = {
+    onSubmit: (data: NoteData) => void
+}
+
+const Notes = ({onSubmit}: NewNoteProps) => {
   return (
-    <div>
-      Hi
-    </div>
+  <>
+  <h1 className="mb-4">New Note</h1>
+  <NoteForm onSubmit={onSubmit}/>
+  </>
   )
 }
 
