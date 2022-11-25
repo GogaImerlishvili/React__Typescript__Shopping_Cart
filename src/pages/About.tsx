@@ -7,11 +7,11 @@ const options = [
   {label: "Third", value:3 },
   {label: "Fourth", value:4 },
   {label: "Fifth", value:5 },
-  {label: "Six", value:6 },
-  {label: "Seven", value:7 },
-  {label: "Eight", value:8 },
-  {label: "Nine", value:9 },
-  {label: "Ten", value:10 },
+  {label: "the sixth", value:6 },
+  {label: "the seventh", value:7 },
+  {label: "the eighth", value:8 },
+  {label: "ninth", value:9 },
+  {label: "tenth", value:10 },
 ]
 
 const About = () => {
