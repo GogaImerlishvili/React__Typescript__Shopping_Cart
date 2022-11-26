@@ -106,7 +106,7 @@ const Select = ({multiple,value,onChange,options}: SelectProps) => {
          className={styles["clear-btn"]}>&times;</button>
         <div className={styles.divider}></div>
         <div className={styles.caret}></div>
-        <ul className={`${styles.options} ${isOpen ? styles.show : ""}`}>
+        <ul className={`${styles.options} ${!isOpen ? styles.show : ""}`}>
           {options.map((option,index) => (
             <li
               onMouseEnter={() => setHighlightedIndex(index)}
