@@ -48,8 +48,12 @@ function App() {
 
   function onCreateNote({tags,...data}: NoteData){
     setNotes(prevNotes => {
-      return [...prevNotes, {...data,id: uuidV4,tagIds: tags.map(tag => tag.id)},]
+      return [...prevNotes, {...data, id: uuidV4(),tagIds: tags.map(tag => tag.id)},]
     })
+  }
+
+  function addTag(tag: Tag){
+    setTags(prev => [...prev,tag])
   }
   return (
     <ShoppingCartProvider>
@@ -58,8 +62,9 @@ function App() {
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/store' element={<Store />} />
-      <Route path='/about' element={<About />} />
-      <Route path="/notes" element={<Notes onSubmit={onCreateNote} />} />
+      <Route path='/about' element={<About availableTags={tags} notes={noteWithTags } />} />
+      <Route path="/notes" element={<Notes onSubmit={onCreateNote}
+      onAddTag={addTag} availableTags={tags} />} />
     </Routes>
     </Container>
     </ShoppingCartProvider>
