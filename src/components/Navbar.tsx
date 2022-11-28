@@ -13,7 +13,7 @@ const Navbar = () => {
         <Nav className="me-auto">
             <Nav.Link to="/" as={NavLink}>MiniGame</Nav.Link>
             <Nav.Link to="/store" as={NavLink}>Store</Nav.Link>
-            <Nav.Link to="/about" as={NavLink}>Mark</Nav.Link>
+            <Nav.Link to="/mark" as={NavLink}>Mark</Nav.Link>
             <Nav.Link to="/notes" as={NavLink}>Notes</Nav.Link>
         </Nav>
     </Container>  
