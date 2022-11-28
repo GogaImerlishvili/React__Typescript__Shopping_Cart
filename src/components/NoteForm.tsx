@@ -66,7 +66,7 @@ const NoteForm = ({onSubmit,onAddTag,availableTags}: NoteFormProps) => {
             </Form.Group>
             <Stack direction="horizontal" gap={2} className="justify-content-end">
                 <Button type="submit" variant="primary">Save</Button>
-                <Link to="..">
+                <Link to="/mark">
                 <Button type="button" variant="outline-secondary">Cancel</Button>
                 </Link>
             </Stack>
