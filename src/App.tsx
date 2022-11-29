@@ -6,10 +6,13 @@ import Store from './pages/Store';
 import About from './pages/About';
 import Navbar from './components/Navbar';
 import Notes from './pages/Notes';
+import Register from './pages/Register';
+import Login from './components/Login';
 import { ShoppingCartProvider } from './context/ShppingCartContext';
 import "./App.css"
 import { useLocalStorage } from './hooks/useLocalStorage';
 import {v4 as uuidV4} from "uuid"
+import {ToastContainer} from "react-toastify"
 
 export type Note = {
   id:string
@@ -59,12 +62,14 @@ function App() {
     <ShoppingCartProvider>
     <Navbar />
     <Container className="mb-4">
+      <ToastContainer />
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/store' element={<Store />} />
       <Route path='/mark' element={<About availableTags={tags} notes={noteWithTags } />} />
       <Route path="/notes" element={<Notes onSubmit={onCreateNote}
       onAddTag={addTag} availableTags={tags} />} />
+      <Route path="/register" element={<Login />} />
     </Routes>
     </Container>
     </ShoppingCartProvider>
