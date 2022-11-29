@@ -3,6 +3,7 @@ import { Container,Button,Nav,Navbar as NavbarBs } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import {MdLocalGroceryStore} from "react-icons/md"
 import { useShoppingCart } from '../context/ShppingCartContext'
+import {AiOutlineUserAdd} from "react-icons/ai"
 
 
 const Navbar = () => {
@@ -17,6 +18,9 @@ const Navbar = () => {
             <Nav.Link to="/notes" as={NavLink}>Notes</Nav.Link>
         </Nav>
     </Container>  
+    <Nav.Link to="/register" as={NavLink}>
+    <AiOutlineUserAdd style={{width:"3rem",height:"2.5rem",marginLeft:"-25%"}} />
+    </Nav.Link>
     <Button 
     onClick={openCart}
     style={{width:"3rem",height:"3rem", position:"relative"}} variant="outline-primary" className="rounded-circle me-5">
