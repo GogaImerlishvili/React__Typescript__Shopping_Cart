@@ -16,6 +16,7 @@ import {v4 as uuidV4} from "uuid"
 import {ToastContainer} from "react-toastify"
 import { useAppDispatch } from './hooks/store';
 import { setUser } from './features/authSlice';
+import PrivateRoute from './components/PrivateRoute';
 
 export type Note = {
   id:string
@@ -79,7 +80,9 @@ dispatch(setUser(user))
       <Route path="/notes" element={<Notes onSubmit={onCreateNote}
       onAddTag={addTag} availableTags={tags} />} />
       <Route path="/register" element={<Login />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard" element={<PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>} />
     </Routes>
     </Container>
     </ShoppingCartProvider>
