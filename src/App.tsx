@@ -1,4 +1,4 @@
-import React,{useMemo} from 'react';
+import React,{useMemo,useEffect} from 'react';
 import { Routes,Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Home from './pages/Home';
@@ -8,11 +8,14 @@ import Navbar from './components/Navbar';
 import Notes from './pages/Notes';
 import Register from './pages/Register';
 import Login from './components/Login';
+import Dashboard from './pages/Dashboard';
 import { ShoppingCartProvider } from './context/ShppingCartContext';
 import "./App.css"
 import { useLocalStorage } from './hooks/useLocalStorage';
 import {v4 as uuidV4} from "uuid"
 import {ToastContainer} from "react-toastify"
+import { useAppDispatch } from './hooks/store';
+import { setUser } from './features/authSlice';
 
 export type Note = {
   id:string
@@ -42,6 +45,12 @@ export type Tag ={
 function App() {
   const [notes,setNotes] = useLocalStorage<RawNote[]>("NOTES", [])
   const [tags,setTags] = useLocalStorage<Tag[]>("TAGS",[])
+  const dispatch = useAppDispatch()
+  const user = JSON.parse(localStorage.getItem("user") || "{}")
+
+  useEffect(() =>{
+dispatch(setUser(user))
+  },[])
 
   const noteWithTags = useMemo(() => {
     return notes.map(note => {
@@ -70,6 +79,7 @@ function App() {
       <Route path="/notes" element={<Notes onSubmit={onCreateNote}
       onAddTag={addTag} availableTags={tags} />} />
       <Route path="/register" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
     </Container>
     </ShoppingCartProvider>
